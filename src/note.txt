@@ -1,0 +1,184 @@
+React Installation
+create a folder
+npm create vite@latest
+.
+react
+js
+npm install
+npm run dev (start up the dev envt)
+
+Folder Structure
+edit 
+clear out the css
+edit the app.jsx
+
+app route
+npm i react-router-dom
+
+REACT COMPONENT - javsacript Functions that controls a User Interface
+Navbar Footer Hero
+create a React compononet
+1. Must start with Uppercase
+const Navbar = ()=>{
+
+}
+2. must return an element 
+const Navbar = ()=>{
+    return <header>
+    links
+    </header>
+}
+3. component can only return one element ()
+
+const Navbar = ()=>{
+    return <header>
+    <a></a>
+    <img>
+    </header>
+}
+
+NESTING COMPONENTS  - App.jsx
+
+function App(){
+    return <div>
+    <Navbar></Navbar>
+    <Navbar />
+    <h1>React Tuts</h1>
+    <p>
+    </div>
+}
+REsusable component
+
+JSX - js extension
+babel- (jsx ---> html)
+rules guiding JSX
+1. <h1 class='text'></h1>
+<h1 className = 'text'></h1>
+
+2. evry tag must be closed
+<img  src= '' alt= '' />
+<br />
+3. can only return only one element 
+react Fragment <>  </>
+
+
+WORKING WITH CSS IN REACT
+1. global css (App.css or index.css) linked
+2. create individual css files (be careful of selections)
+3. bootstrap 
+
+WORKING WITH IMAGES
+1. working with images online stays same(copy image address)
+2. working with images locally
+ move image into assets folder
+ import image into the appropraite component
+ import myImg from 'assets'
+ <Img src= {myImg} />
+
+ App Routing
+ browser router
+ Routesroute- path, element
+
+ 1. install router dom from your terminal - "npm i react-router-dom"
+ 2. import Browser router that was installed from the router dom - "import {BrowserRouter} from "react-router-dom""
+ 3. wrap your app around the BrowserRouter - "<BrowserRouter><App /><BrowserRouter/>"
+ 4. import in your App.jsx - import {Routes, route} from "react-router-dom"
+
+PROPS
+Props (short for "properties") are used to pass data from one component to another.
+
+Props Drilling
+
+Occurs when props are passed through multiple nested components.
+
+It can become messy in deep component trees.
+
+PROPS CHILDREN - It means passing jsx elements(p,div) as a data from parent to child
+
+
+props reciving in a child components comes in as an object
+Assignment
+1. Create a new react project (personal pratice)
+2. create three components (Navbar, Hero and Footer)
+3. Nest the components in the App.jsx
+4. In the Hero Component, use an image on your laptop
+
+
+RESPONDING TO USERS INTERACTION
+
+STATE
+is used to store data that can change over time in a component.
+
+STATE MANAGEMENT- It manages changes in data in a project
+
+Managed using the useState hook.
+
+UI- 
+DATA
+
+useState is a type of state management which incudes
+1. initial state, 2. function that can change the initial state
+
+Whenever there is a state change, react re-renders so it can pick up the newest change
+it can take in any data type
+
+CONDITIONAING RENDERING(it is an if else statement)
+It can be don in three different ways;
+
+1. Multiple return
+constLoading
+
+2. ternary operator
+condition ? first action : second action
+
+3. Short circuit evaluation : js doesn't stress itself to evaluate all data
+true && false === false
+false && true === false
+
+Hooks
+
+Hooks allow functional components to manage state and side effects.
+
+Common hooks:
+
+useState() → for local state
+
+useEffect() → for side effects (e.g. API calls)
+
+useRef() → for referencing DOM elements
+
+
+useEffect - it is a react hook used to run side effects (data fetching upon loading page)
+useEffect(1,2)
+1- cb function
+2- dependency list []
+useEffect(()=>{
+},
+ [])
+
+Global State (Context API)
+
+Avoids props drilling by making data available to all components.
+
+Uses createContext, Provider, and useContext.
+
+
+React Basics
+
+Components: reusable functions with JSX
+
+Props: pass data to components
+
+State: useState for dynamic data
+
+Effects: useEffect for side effects (API calls)
+
+Conditional rendering: ternary, short-circuit
+
+Lists: .map() with key prop
+
+Events & Forms
+
+onClick, onChange, form control
+
+Controlled components for inputs
