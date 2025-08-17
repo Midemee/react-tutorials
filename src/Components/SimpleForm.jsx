@@ -1,11 +1,12 @@
 import React from 'react'
-import {useState } from "react"
+import {useState} from "react"
+
 
 export default function SimpleForm() {
     const [email, setEmail] = useState ("")
     const [username, setUsername] = useState ("")
     const [fullname, setFullname] = useState ("")
-    const [agree, setAgree] = useState (false)
+    const [agree, setAgree] = useState ("")
     const [error, setError] = useState ("")
 
     const handleSubmit = (event) => {
@@ -15,15 +16,17 @@ export default function SimpleForm() {
         //confirm user fills all fields else return an error message
         if (!email || !username || !fullname || !agree) {
             setError ("please fill all fields")
+            return; //stop further execution if validation fails
         }
         //else condition 
         //after user fills all fields, and then submits... you want to reset the fields back to empty fields..... Reset
         setEmail("")
         setUsername("")
         setFullname("")
-        setAgree(false) 
+        setAgree("") 
+        setError("")
     }
-        
+
 
 
 
@@ -50,27 +53,6 @@ export default function SimpleForm() {
 
         </form>
     </div>
-    
   )
 }
 
-{/* <div>
-    <form>
-        <h1>Fill the Form</h1>
-
-        <label htmlFor=''>Full Name</label>
-        <input id='' type='' />
-
-        <label htmlFor=''>Email address</label>
-        <input id='' type=''  />
-
-        <label htmlFor=''>Gender</label>
-        <input id='' type=''  />
-
-        <label htmlFor=''>Agree to terms and conditions</label>
-        <input id='' type=''  />
-
-        <button>Submit</button>
-
-    </form>
-</div> */}
